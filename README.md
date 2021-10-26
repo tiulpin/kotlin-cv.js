@@ -1,6 +1,6 @@
 # kotlin-cv.js
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/tiulpin?style=flat)](https://tiulp.in)
+[![Code Quality](https://github.com/tiulpin/kotlin-cv.js/workflows/Qodana/badge.svg)](https://github.com/tiulpin/kotlin-cv.js/actions/workflows/quality.yml)
 [![Build](https://github.com/tiulpin/kotlin-cv.js/workflows/Build/badge.svg)](https://github.com/tiulpin/kotlin-cv.js/actions/workflows/build.yml)
 
 Personal terminal-like simple webpage template built with [Kotlin/JS](https://kotlinlang.org/docs/js-overview.html).
