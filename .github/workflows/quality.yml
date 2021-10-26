@@ -1,0 +1,33 @@
+name: Qodana
+on: [ push, pull_request ]
+jobs:
+  qodana:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/work/_temp/_github_home/qodana-cache
+          key: ${{ runner.os }}-qodana-${{ github.ref }}
+          restore-keys: |
+            ${{ runner.os }}-qodana-${{ github.ref }}
+            ${{ runner.os }}-qodana-
+
+      - run: |
+            curl -L -o kotlinjs.zip "https://plugins.jetbrains.com/plugin/download?rel=true&updateId=17183"
+            unzip kotlinjs.zip
+
+      - uses: JetBrains/qodana-action@v3.2.1
+        with:
+          linter: qodana-jvm-community
+          additional-volumes: "${{ github.workspace }}/kotlinjs:/opt/idea/plugins/kotlinjs"
+
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ${{ github.workspace }}/qodana
+
+      - uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: ${{ github.workspace }}/qodana/qodana.sarif.json
