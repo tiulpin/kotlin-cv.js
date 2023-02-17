@@ -1,5 +1,5 @@
 plugins {
-    kotlin("js") version "1.5.0"
+    kotlin("js") version "1.8.10"
 }
 
 group = "me.tiulpin"
@@ -11,7 +11,7 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
-    implementation("org.jetbrains.kotlinx:kotlinx-html:0.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-html:0.8.0")
 }
 
 kotlin {
@@ -19,13 +19,10 @@ kotlin {
         binaries.executable()
         browser {
             commonWebpackConfig {
-                cssSupport.enabled = true
+                cssSupport {
+                    enabled.set(true)
+                }
             }
         }
-    }
-}
-afterEvaluate {
-    rootProject.extensions.configure<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension> {
-        versions.webpackCli.version = "4.9.0"
     }
 }
