@@ -1,0 +1,7 @@
+version: "1.0"
+profile:
+  name: qodana.recommended
+include:
+  - name: CheckDependencyLicenses
+plugins:
+  - id: org.jetbrains.kotlin-js-inspection-pack-plugin
