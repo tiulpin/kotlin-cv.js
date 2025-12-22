@@ -1,5 +1,5 @@
 plugins {
-    kotlin("js") version "1.8.10"
+    alias(libs.plugins.kotlin.multiplatform)
 }
 
 group = "me.tiulpin"
@@ -9,19 +9,27 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation(kotlin("test"))
-    implementation("org.jetbrains.kotlinx:kotlinx-html:0.8.0")
-}
-
 kotlin {
-    js(IR) {
+    js {
         binaries.executable()
         browser {
             commonWebpackConfig {
                 cssSupport {
                     enabled.set(true)
                 }
+            }
+        }
+    }
+
+    sourceSets {
+        jsMain {
+            dependencies {
+                implementation(libs.kotlinx.html)
+            }
+        }
+        jsTest {
+            dependencies {
+                implementation(kotlin("test"))
             }
         }
     }
