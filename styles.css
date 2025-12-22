@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap');
+
+html, body {
+    background-color: #27282c;
+    margin: 20px;
+}
+
+* {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+#console {
+    position: relative;
+    display: block;
+    line-height: 18px;
+    font-size: 18px;
+    color: #A97BFF;
+    max-width: calc(100vw - 40px);
+    overflow-wrap: anywhere;
+}
+
+#console a {
+    color: #A97BFF;
+}
+
+.prompt, .body {
+    display: inline-block;
+}
+
+.body {
+    overflow-wrap: anywhere;
+}
+
+.console-line {
+    margin-bottom: 5px;
+    max-width: 100%;
+}
+
+.console-line.active .body::after {
+    content: "";
+    display: inline-block;
+    background-color: #A97BFF;
+    vertical-align: bottom;
+    position: relative;
+    left: 1px;
+    width: 10px;
+    height: 18px;
+    -webkit-animation: blink 1s step-end infinite;
+    animation: blink 1s step-end infinite;
+}
+
+.stdout {
+    color: #A97BFF;
+    margin: 0 0 10px 0;
+    line-height: 1.2em;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    max-width: 100%;
+}
+
+@-webkit-keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+/* Ensure pre tags don't add extra spacing */
+.console-line .prompt pre {
+    margin: 0;
+    display: inline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+}
+
+.console-line pre.body {
+    margin: 0;
+    display: inline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
