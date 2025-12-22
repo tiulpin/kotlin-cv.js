@@ -107,31 +107,31 @@ val files = listOf(hey, quoteTxt, myFile)
 
 ### Available Commands
 
-| Command | Description |
-|---------|-------------|
-| `help` | Show all commands |
-| `cat` | Display file contents |
-| `ls` | List files (with flags: -l, -a, -h, -r, -t, -S, -1) |
-| `tree` | Show file tree |
-| `grep` | Search for patterns |
-| `wc` | Word/line/char count |
-| `head`/`tail` | Show first/last lines |
-| `echo` | Print text |
-| `clear` | Clear terminal |
-| `history` | Show command history |
-| `date` | Current date/time |
-| `whoami` | Current user |
-| `pwd` | Current directory |
-| `printenv` | Environment variables |
-| `uptime` | Session uptime |
-| `neofetch` | System info |
-| `open` | Open URL |
-| `uuid` | Generate UUID |
-| `base64` | Encode/decode base64 |
-| `json` | Pretty-print JSON |
-| `urlencode`/`urldecode` | URL encoding |
-| `color` | Preview color |
-| `man` | Manual for command |
+| Command                 | Description                                         |
+|-------------------------|-----------------------------------------------------|
+| `help`                  | Show all commands                                   |
+| `cat`                   | Display file contents                               |
+| `ls`                    | List files (with flags: -l, -a, -h, -r, -t, -S, -1) |
+| `tree`                  | Show file tree                                      |
+| `grep`                  | Search for patterns                                 |
+| `wc`                    | Word/line/char count                                |
+| `head`/`tail`           | Show first/last lines                               |
+| `echo`                  | Print text                                          |
+| `clear`                 | Clear terminal                                      |
+| `history`               | Show command history                                |
+| `date`                  | Current date/time                                   |
+| `whoami`                | Current user                                        |
+| `pwd`                   | Current directory                                   |
+| `printenv`              | Environment variables                               |
+| `uptime`                | Session uptime                                      |
+| `neofetch`              | System info                                         |
+| `open`                  | Open URL                                            |
+| `uuid`                  | Generate UUID                                       |
+| `base64`                | Encode/decode base64                                |
+| `json`                  | Pretty-print JSON                                   |
+| `urlencode`/`urldecode` | URL encoding                                        |
+| `color`                 | Preview color                                       |
+| `man`                   | Manual for command                                  |
 
 ### Piping
 
