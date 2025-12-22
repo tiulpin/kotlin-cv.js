@@ -1,0 +1,15 @@
+{
+  "name": "kotlin-cv-e2e-tests",
+  "private": true,
+  "scripts": {
+    "test": "playwright test --project=chromium",
+    "test:ui": "playwright test --ui",
+    "test:headed": "playwright test --project=chromium --headed --workers=1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "wait-on": "^9.0.3"
+  }
+}
+
+
