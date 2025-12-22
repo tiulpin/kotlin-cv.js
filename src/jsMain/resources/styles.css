@@ -11,9 +11,15 @@ html, body {
 
 #console {
     position: relative;
-    display: inline-block;
+    display: block;
     line-height: 18px;
     font-size: 18px;
+    color: #A97BFF;
+    max-width: calc(100vw - 40px);
+    overflow-wrap: anywhere;
+}
+
+#console a {
     color: #A97BFF;
 }
 
@@ -27,6 +33,7 @@ html, body {
 
 .console-line {
     margin-bottom: 5px;
+    max-width: 100%;
 }
 
 .console-line.active .body::after {
@@ -42,6 +49,16 @@ html, body {
     animation: blink 1s step-end infinite;
 }
 
+.stdout {
+    color: #A97BFF;
+    margin: 0 0 10px 0;
+    line-height: 1.2em;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    max-width: 100%;
+}
+
 @-webkit-keyframes blink {
     0% { opacity: 1.0; }
     50% { opacity: 0.0; }
@@ -54,13 +71,20 @@ html, body {
     100% { opacity: 1.0; }
 }
 
-.stdout {
-    color: #A97BFF;
-    margin: 0 0 10px 0;
-    line-height: 1.2em;
-    overflow-wrap: anywhere;
+/* Ensure pre tags don't add extra spacing */
+.console-line .prompt pre {
+    margin: 0;
+    display: inline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
 }
 
-#console a {
-    color: #A97BFF;
+.console-line pre.body {
+    margin: 0;
+    display: inline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
